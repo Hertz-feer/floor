@@ -30,8 +30,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User queryUser(Integer account, Integer password) {
-        return null;
+    public User queryUser(String account, String password) {
+        return userRepository.findByAccountAndPassword(account,password);
     }
 
     @Override

@@ -25,7 +25,7 @@ public interface UserService {
      * @param password
      * @return
      */
-    User queryUser(Integer account,Integer password);
+    User queryUser(String account,String password);
 
     /**
      * 更具Id删除用户
