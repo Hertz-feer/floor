@@ -12,12 +12,13 @@ public class FirstConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("login");
         registry.addViewController("/index.html").setViewName("login");
+        registry.addViewController("/main.html").setViewName("dashboard");
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
          registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                 .excludePathPatterns("/index.html","/","/user/login","/resources/*","/webjars/**");
+                 .excludePathPatterns("/index.html","/","/user/login","/resources/*","/webjars/**","/asserts/**");
     }
 
 
