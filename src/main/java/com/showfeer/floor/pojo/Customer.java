@@ -18,6 +18,11 @@ public class Customer implements Serializable {
     private Long phone;  //电话  网页  , , name, phone, sex, volume, where
     private String sex;  //性别  网页
     private Integer frequency;  //订单次数  默认为0
+    private Date creat_time;  //创建时间
+    private Double volume;  //总金额
+    private Integer area;  //地址
+    private String account;  //详细地址
+    private String ask;  //要求
 
     @Override
     public String toString() {
@@ -34,13 +39,6 @@ public class Customer implements Serializable {
                 ", ask='" + ask + '\'' +
                 '}';
     }
-
-    private Date creat_time;  //创建时间
-    private Double volume;  //总金额
-    private Integer area;  //地址
-    private String account;  //详细地址
-    private String ask;  //要求
-
     public Integer getId() {
         return id;
     }

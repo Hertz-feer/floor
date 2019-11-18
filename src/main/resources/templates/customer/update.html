@@ -70,21 +70,25 @@
 						<div class="form-group">
 							<label>性别</label><br/>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sex" value="男" >
+								<input class="form-check-input" type="radio" name="sex" value="男" th:checked="${customer.sex}eq '男' ">
 								<label class="form-check-label">男</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sex" value="女" >
+								<input class="form-check-input" type="radio" name="sex" value="女" th:checked="${customer.sex} eq '女' ">
 								<label class="form-check-label">女</label>
 							</div>
 						</div>
 						<div>
 							<label>地址</label><br/>
-							<select class="form-control" name="prov" id="prov" onchange="showCity()">
+							<select class="form-control" name="prov" id="prov" onchange="showCity()" >
 								<option  th:value="${district.id}" th:each="district:${districts}" th:text="${district.address}">1</option>
 							</select>
-							<select class="form-control" name="city" id="city" onchange="showCountry()">请先选择省份或直辖市</select>
-							<select class="form-control" name="area" id="area" ></select>
+							<select class="form-control" name="city" id="city" onchange="showCountry()" >
+								<option th:text="请先选择省份或直辖市"></option>
+							</select>
+							<select class="form-control" name="area" id="area" >
+								<option th:text="请先选择省份或直辖市"></option>
+							</select>
 						</div>
 						<div class="form-group">
 							<label>详细地址</label>
