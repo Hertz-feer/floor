@@ -59,8 +59,6 @@
 						<!--修改客户的界面 put请求-->
 						<input type="hidden" name="_method" value="put" />
 						<input name="id" th:value="${customer.id}" type="hidden">
-						<input name="frequency" th:value="${customer.frequency}" type="hidden">
-						<input name="volume" th:value="${customer.volume}" type="hidden">
 						<div class="form-group">
 							<label>姓名</label>
 							<input name="name" type="text" class="form-control"  th:value="${customer.name}">
@@ -80,9 +78,21 @@
 								<label class="form-check-label">女</label>
 							</div>
 						</div>
+						<div>
+							<label>地址</label><br/>
+							<select class="form-control" name="prov" id="prov" onchange="showCity()">
+								<option  th:value="${district.id}" th:each="district:${districts}" th:text="${district.address}">1</option>
+							</select>
+							<select class="form-control" name="city" id="city" onchange="showCountry()">请先选择省份或直辖市</select>
+							<select class="form-control" name="area" id="area" ></select>
+						</div>
 						<div class="form-group">
-							<label>地址</label>
-							<input name="address" type="text" class="form-control" placeholder="zhangsan@atguigu.com" th:value="${customer.address}">
+							<label>详细地址</label>
+							<input name="account" type="text" class="form-control"  th:value="${customer.account}">
+						</div>
+						<div class="form-group">
+							<label>物流要求</label>
+							<input name="ask" type="text" class="form-control" th:value="${customer.ask}">
 						</div>
 						<button type="submit" class="btn btn-primary" >修改</button>
 					</form>
@@ -99,6 +109,7 @@
 
 		<!-- Icons -->
 		<script type="text/javascript" src="asserts/js/feather.min.js" th:src="@{/asserts/js/feather.min.js}"></script>
+		<script type="text/javascript" th:src="@{/asserts/js/city.js}"></script>
 		<script>
 			feather.replace()
 		</script>

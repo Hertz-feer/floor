@@ -23,7 +23,7 @@ public interface CustomerService {
      * @param customer
      * @return
      */
-    Customer updateCustomer(Customer customer);
+    Integer updateCustomer(Customer customer);
 
     /**
      * 按照ID查询客户

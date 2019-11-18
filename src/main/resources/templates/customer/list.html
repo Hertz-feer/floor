@@ -66,6 +66,8 @@
 									<th>创建时间</th>
 									<th>总金额</th>
 									<th>地址</th>
+									<th>详细地址</th>
+									<th>详细</th>
 									<th>操作</th>
 								</tr>
 							</thead>
@@ -78,7 +80,9 @@
 									<td th:text="${customer.frequency}"></td>
 									<td th:text="${#dates.format(customer.creat_time, 'yyyy-MM-dd HH:mm')}"></td>
 									<td th:text="${customer.volume}"></td>
-									<td th:text="${customer.address}"></td>
+									<td th:text="${customer.district.address}"></td>
+									<td th:text="${customer.account}"></td>
+									<td th:text="${customer.ask}"></td>
 									<td>
 										<a class="btn btn-sm btn-primary" th:href="@{/customer/}+${customer.id}">编辑</a>
 										<a th:attr="del_uri=@{/customer/}+${customer.id}" class="btn btn-sm btn-danger deleteBtn">删除</a>
