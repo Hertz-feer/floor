@@ -15,6 +15,7 @@ function  showCity(){
             $("#city").html(str)
         }
     })
+    showCountry();
 }
 
 function showCountry() {
